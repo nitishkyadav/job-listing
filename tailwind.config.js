@@ -4,7 +4,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
-      xs: "380px",
+      xs: "370px",
       ...defaultTheme.screens,
       // => @media (min-width: 380px) { ... }
     },

@@ -53,7 +53,7 @@ const JobListing = (props) => {
         </div>
       </div>
       <div className="hidden xs:block w-11/12 mt-4 mb-2">
-        <hr className="justify-start" />
+        <hr className="h-px bg-gray-400 border-0 dark:bg-gray-400" />
       </div>
       <div className="flex text-cyan-500 xs:pr-2 mt-4 mb-6">
         <ul className="flex flex-wrap gap-2.5">
