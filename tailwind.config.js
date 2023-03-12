@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      xs: "380px",
+      ...defaultTheme.screens,
+      // => @media (min-width: 380px) { ... }
+    },
     extend: {
       colors: {
         darkCyan: "hsl(180, 29%, 50%)",

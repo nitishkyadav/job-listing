@@ -18,7 +18,7 @@ const JobListings = (props) => {
   }, [keywords]);
 
   return (
-    <div className="flex flex-col gap-6 content-center w-full flex-wrap mt-20">
+    <div className="flex px-8 mx-auto flex-col">
       {jobData.map((data) => (
         <JobListing data={data} key={data.id} setJobData={setJobData} />
       ))}

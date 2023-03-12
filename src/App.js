@@ -5,8 +5,8 @@ import SearchBar from "./SearchBar/SearchBar";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <div className="flex flex-col align-middle">
+      {/* <Header /> */}
       {/* <SearchBar /> */}
       <JobListings />
     </div>

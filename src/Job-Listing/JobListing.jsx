@@ -16,36 +16,32 @@ const JobListing = (props) => {
     dispatch(filterKeywordsActions.addKeywords({ value }));
   }
   return (
-    <div
-      className={`flex ${borderLeft} bg-white rounded-md font-leagueSparten justify-between w-10/12 max-w-5xl px-4 border border-black p-8`}
-    >
-      <div className={data.featured ? "flex ml-6" : "flex ml-8"}>
-        <img src={data.logo} alt={data.company} />
+    <div className="flex font-medium border-black border-2 mt-10 xs:flex-col pl-4 relative">
+      <div className="flex xs:flex-col mt-10">
+        <div className="xs:w-2/12 absolute -top-7">
+          <img src={data.logo} alt={data.company} />
+        </div>
 
-        <div className="flex flex-col ml-4 justify-center gap-1">
-          <div className="flex">
-            <p className="mr-2.5 font-medium pt-0.5">{data.company}</p>
-            <ul className="flex list-none gap-2.5">
+        <div className="flex flex-col text-center xs:mt-2">
+          <div className="flex gap-2.5">
+            <p className="">{data.company}</p>
+            <ul className="flex gap-2.5 text-white">
               {data.new && (
-                <li className="px-2.5 pt-0.5 rounded-2xl bg-cyan-500 text-white font-medium">
-                  New
-                </li>
+                <li className="p-0.5 px-1.5 rounded-2xl bg-cyan-500">New!</li>
               )}
               {data.featured && (
-                <li className="px-2.5  pt-0.5 rounded-2xl bg-black font-medium text-white">
+                <li className="p-0.5 px-1.5 rounded-2xl bg-cyan-500 bg-black">
                   Featured
                 </li>
               )}
             </ul>
           </div>
-          <div className="">
-            <h2 className="text-cyan-500 text-xl mt-1 cursor-pointer">
-              {data.position}
-            </h2>
+          <div className="flex mt-2">
+            <h2 className="">{data.position}</h2>
           </div>
 
-          <div className="">
-            <ul className="flex gap-2.5 opacity-70 list-disc list-inside">
+          <div className="flex opacity-50">
+            <ul className="flex gap-2.5 list-disc list-inside">
               <li className="list-none">{data.postedAt}</li>
               <li>{data.contract}</li>
               <li>{data.location}</li>
@@ -53,16 +49,19 @@ const JobListing = (props) => {
           </div>
         </div>
       </div>
-      <div className="flex my-auto">
-        <ul className="flex list-none gap-2.5">
+      <div className="hidden xs:block w-11/12 mt-4 mb-2">
+        <hr className="justify-start" />
+      </div>
+      <div className="flex text-cyan-500 xs:pr-2 mt-4 mb-6">
+        <ul className="flex flex-wrap gap-2.5">
           <li
-            className="px-2.5 cursor-pointer bg-teal-100 text-center text-teal-500 hover:bg-teal-500 hover:text-white pt-0.5"
+            className="p-1 bg-cyan-100 border-transparent"
             onClick={onClickHandler}
           >
             {data.role}
           </li>
           <li
-            className="px-2.5 cursor-pointer bg-teal-100 text-center text-teal-500 hover:bg-teal-500 hover:text-white pt-0.5"
+            className="p-1 bg-cyan-100 border-transparent"
             onClick={onClickHandler}
           >
             {data.level}
@@ -70,7 +69,7 @@ const JobListing = (props) => {
           {data.tools.map((tool, index) => (
             <li
               key={index}
-              className="px-2.5 cursor-pointer bg-teal-100 text-center text-teal-500 hover:bg-teal-500 hover:text-white pt-0.5"
+              className="p-1 bg-cyan-100 border-transparent"
               onClick={onClickHandler}
             >
               {tool}
@@ -79,7 +78,7 @@ const JobListing = (props) => {
           {data.languages.map((language, index) => (
             <li
               key={index}
-              className="px-2.5 cursor-pointer bg-teal-100 text-center text-teal-500 pt-0.5 hover:bg-teal-500 hover:text-white"
+              className="p-1 bg-cyan-100 border-transparent"
               onClick={onClickHandler}
             >
               {language}
