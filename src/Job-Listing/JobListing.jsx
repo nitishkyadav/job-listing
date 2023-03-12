@@ -7,8 +7,9 @@ const JobListing = (props) => {
   const data = props.data;
 
   if (data.featured) {
-    borderLeft = "border-l-cyan-500 border-l-8";
+    borderLeft = "border-l-cyan-500 border-l-4";
   } else {
+    borderLeft = "";
   }
 
   function onClickHandler(e) {
@@ -16,14 +17,16 @@ const JobListing = (props) => {
     dispatch(filterKeywordsActions.addKeywords({ value }));
   }
   return (
-    <div className="flex font-medium border-black border-2 mt-10 xs:flex-col pl-4 relative">
+    <div
+      className={`flex text-cyan-500 bg-white font-medium border-transparent border-2 ${borderLeft} rounded-md mt-10 xs:flex-col pl-4 relative`}
+    >
       <div className="flex xs:flex-col mt-10">
         <div className="xs:w-2/12 absolute -top-7">
           <img src={data.logo} alt={data.company} />
         </div>
 
-        <div className="flex flex-col text-center xs:mt-2">
-          <div className="flex gap-2.5">
+        <div className="flex flex-col text-center xs:mt-1">
+          <div className="flex content-center gap-2.5">
             <p className="">{data.company}</p>
             <ul className="flex gap-2.5 text-white">
               {data.new && (
@@ -37,11 +40,11 @@ const JobListing = (props) => {
             </ul>
           </div>
           <div className="flex mt-2">
-            <h2 className="">{data.position}</h2>
+            <h2 className="text-black font-bold">{data.position}</h2>
           </div>
 
-          <div className="flex opacity-50">
-            <ul className="flex gap-2.5 list-disc list-inside">
+          <div className="flex mt-2">
+            <ul className="flex gap-2.5 list-disc list-inside text-gray-400">
               <li className="list-none">{data.postedAt}</li>
               <li>{data.contract}</li>
               <li>{data.location}</li>
@@ -55,13 +58,13 @@ const JobListing = (props) => {
       <div className="flex text-cyan-500 xs:pr-2 mt-4 mb-6">
         <ul className="flex flex-wrap gap-2.5">
           <li
-            className="p-1 bg-cyan-100 border-transparent"
+            className="p-1 bg-bodyBg border-transparent"
             onClick={onClickHandler}
           >
             {data.role}
           </li>
           <li
-            className="p-1 bg-cyan-100 border-transparent"
+            className="p-1 bg-bodyBg border-transparent"
             onClick={onClickHandler}
           >
             {data.level}
@@ -69,7 +72,7 @@ const JobListing = (props) => {
           {data.tools.map((tool, index) => (
             <li
               key={index}
-              className="p-1 bg-cyan-100 border-transparent"
+              className="p-1 bg-bodyBg border-transparent"
               onClick={onClickHandler}
             >
               {tool}
@@ -78,7 +81,7 @@ const JobListing = (props) => {
           {data.languages.map((language, index) => (
             <li
               key={index}
-              className="p-1 bg-cyan-100 border-transparent"
+              className="p-1 bg-bodyBg border-transparent"
               onClick={onClickHandler}
             >
               {language}
