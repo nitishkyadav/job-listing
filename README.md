@@ -26,10 +26,14 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop Site](./screenshot/desktop.png)
-![Desktop Site with Filter](./screenshot/desktop-filter.png)
-![Desktop Site](./screenshot/mobile-site.jpg)
-![Desktop Site with Filter](./screenshot/mobile-site-filter.jpg)
+![Desktop Site](./screenshots/desktop.png)
+<br/>
+![Desktop Site with Filter](./screenshots/desktop-filter.png)
+<br/>
+![Desktop Site](./screenshots/mobile-site.jpg)
+<br/>
+![Desktop Site with Filter](./screenshots/mobile-site-filter.jpg)
+<br/>
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
