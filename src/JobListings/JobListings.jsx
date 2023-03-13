@@ -27,7 +27,7 @@ const JobListings = (props) => {
   }, [keywords, isSearchEnabled]);
 
   return (
-    <div className={`flex px-8 mx-auto flex-col ${smMarginTop}`}>
+    <div className={`flex px-8 mx-auto flex-col ${smMarginTop} mb-16`}>
       <SearchBar />
       {jobData.map((data) => (
         <JobListing data={data} key={data.id} setJobData={setJobData} />

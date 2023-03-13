@@ -19,7 +19,7 @@ const JobListing = (props) => {
   }
   return (
     <div
-      className={`flex text-teal-500 bg-white font-medium border-transparent border-2 ${borderLeft} rounded-md mt-14 xs:flex-col pl-4 xs:relative md:flex-row md:justify-around md:min-w-4/5 md:flex-grow-1.5 md:pl-0 md:gap-5`}
+      className={`flex text-teal-500 bg-white font-medium border-transparent border-2 ${borderLeft} rounded-md mt-14 xs:flex-col pl-4 xs:relative md:flex-row md:justify-around md:min-w-4/5 md:flex-grow-1.5 md:pl-0 md:gap-5  md:font-leagueSparten md:text-lg`}
     >
       <div className="flex xs:flex-col mt-10 md:flex-row md:m-5">
         <div className="xs:w-2/12 xs:absolute xs:-top-8 md:static md:mx-auto md:w-20 md:self-center">
@@ -41,13 +41,13 @@ const JobListing = (props) => {
             </ul>
           </div>
           <div className="flex mt-2">
-            <h2 className="text-black font-bold hover:text-teal-500">
+            <h2 className="text-black font-bold text-lg hover:text-teal-500">
               {data.position}
             </h2>
           </div>
 
           <div className="flex mt-2">
-            <ul className="flex gap-2.5 list-disc list-inside text-gray-400">
+            <ul className="flex gap-2.5 list-disc list-inside text-gray-400 text-base font-medium">
               <li className="list-none">{data.postedAt}</li>
               <li>{data.contract}</li>
               <li>{data.location}</li>
