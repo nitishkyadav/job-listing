@@ -7,7 +7,7 @@ const Header = () => {
     <header className="flex relative justify-center">
       <img
         src="./images/bg-header-desktop.svg"
-        className="bg-darkCyan max-w-screen-2xl"
+        className="bg-darkCyan max-w-full"
         alt="bg"
       />
       <SearchBar />

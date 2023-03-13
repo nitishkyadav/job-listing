@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 const JobListings = (props) => {
   const { keywords } = useSelector((state) => state.filterKeywords);
   const [jobData, setJobData] = useState([]);
+  const [smMarginTop, setSmMarginTop] = useState([]);
 
   useEffect(() => {
     if (keywords.length === 0) {
@@ -14,11 +15,21 @@ const JobListings = (props) => {
       const data = keywords;
       setJobData(filterParameters(...data));
     }
+
+    if (keywords.length === 0) {
+      setSmMarginTop("mt-4");
+    } else if (keywords.length <= 2) {
+      setSmMarginTop("mt-20");
+    } else if (keywords.length <= 4) {
+      setSmMarginTop("mt-32");
+    } else if (keywords.length > 4) {
+      setSmMarginTop("mt-48");
+    }
     console.log(jobData);
-  }, [keywords]);
+  }, [keywords, smMarginTop]);
 
   return (
-    <div className="flex px-8 mx-auto flex-col">
+    <div className={`flex px-8 mx-auto flex-col xs:${smMarginTop}`}>
       {jobData.map((data) => (
         <JobListing data={data} key={data.id} setJobData={setJobData} />
       ))}
