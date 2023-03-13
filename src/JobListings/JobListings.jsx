@@ -2,9 +2,12 @@ import JobListing from "../Job-Listing/JobListing";
 import { filterParameters } from "../utility/helperFunctions";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import SearchBar from "../SearchBar/SearchBar";
 
 const JobListings = (props) => {
-  const { keywords } = useSelector((state) => state.filterKeywords);
+  const { keywords, isSearchEnabled } = useSelector(
+    (state) => state.filterKeywords,
+  );
   const [jobData, setJobData] = useState([]);
   const [smMarginTop, setSmMarginTop] = useState([]);
 
@@ -16,24 +19,22 @@ const JobListings = (props) => {
       setJobData(filterParameters(...data));
     }
 
-    if (keywords.length === 0) {
-      setSmMarginTop("mt-4");
-    } else if (keywords.length <= 2) {
-      setSmMarginTop("mt-20");
-    } else if (keywords.length <= 4) {
-      setSmMarginTop("mt-32");
-    } else if (keywords.length > 4) {
-      setSmMarginTop("mt-48");
+    if (isSearchEnabled) {
+      setSmMarginTop("-mt-7");
+    } else {
+      setSmMarginTop("");
     }
-    console.log(jobData);
-  }, [keywords, smMarginTop]);
+  }, [keywords, isSearchEnabled]);
 
   return (
-    <div className={`flex px-8 mx-auto flex-col xs:${smMarginTop}`}>
+    // <div className="flex justify-center">
+    <div className={`flex px-8 mx-auto flex-col ${smMarginTop}`}>
+      <SearchBar />
       {jobData.map((data) => (
         <JobListing data={data} key={data.id} setJobData={setJobData} />
       ))}
     </div>
+    // </div>
   );
 };
 

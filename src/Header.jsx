@@ -4,13 +4,13 @@ import SearchBar from "./SearchBar/SearchBar";
 
 const Header = () => {
   return (
-    <header className="flex relative justify-center">
+    <header className="flex justify-center">
       <img
         src="./images/bg-header-desktop.svg"
         className="bg-darkCyan max-w-full"
         alt="bg"
       />
-      <SearchBar />
+      {/* <SearchBar /> */}
     </header>
   );
 };
