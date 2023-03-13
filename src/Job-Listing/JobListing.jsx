@@ -7,7 +7,7 @@ const JobListing = (props) => {
   const data = props.data;
 
   if (data.featured) {
-    borderLeft = "border-l-cyan-500 border-l-4";
+    borderLeft = "border-l-cyan-500";
   } else {
     borderLeft = "";
   }
@@ -18,14 +18,14 @@ const JobListing = (props) => {
   }
   return (
     <div
-      className={`flex text-cyan-500 bg-white font-medium border-transparent border-2 ${borderLeft} rounded-md mt-10 xs:flex-col pl-4 relative`}
+      className={`flex text-cyan-500 bg-white font-medium border-transparent border-2 ${borderLeft} rounded-md mt-10 xs:flex-col pl-4 relative md:flex-row md:justify-around md:min-w-4/5 md:flex-grow-1.5 md:pl-0 md:gap-5`}
     >
-      <div className="flex xs:flex-col mt-10">
-        <div className="xs:w-2/12 absolute -top-7">
+      <div className="flex xs:flex-col mt-10 md:flex-row md:m-5">
+        <div className="xs:w-2/12 xs:absolute xs:-top-7 md:static md:mx-auto md:w-20 md:self-center">
           <img src={data.logo} alt={data.company} />
         </div>
 
-        <div className="flex flex-col text-center xs:mt-1">
+        <div className="flex flex-col text-center xs:mt-1 md:min-w-[300px] md:ml-4 md:mt-0">
           <div className="flex content-center gap-2.5">
             <p className="">{data.company}</p>
             <ul className="flex gap-2.5 text-white">
@@ -52,10 +52,12 @@ const JobListing = (props) => {
           </div>
         </div>
       </div>
-      <div className="hidden xs:block w-11/12 mt-4 mb-2">
+
+      <div className="md:hidden xs:block w-11/12 mt-4 mb-2">
         <hr className="h-px bg-gray-400 border-0 dark:bg-gray-400" />
       </div>
-      <div className="flex text-cyan-500 xs:pr-3 mt-4 mb-6">
+
+      <div className="flex text-cyan-500 xs:pr-3 xs:mt-4 xs:mb-6 md:content-center md:flex-wrap md:min-w-min md:justify-end">
         <ul className="flex flex-wrap gap-2.5">
           <li
             className="p-1 bg-bodyBg border-transparent"

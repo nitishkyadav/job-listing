@@ -5,7 +5,10 @@ module.exports = {
   theme: {
     screens: {
       xs: "370px",
-      ...defaultTheme.screens,
+      md: "768px",
+      // ...defaultTheme.screens,
+
+      // md: "768px",
       // => @media (min-width: 380px) { ... }
     },
     extend: {

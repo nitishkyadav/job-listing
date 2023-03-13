@@ -20,7 +20,7 @@ const SearchBar = (props) => {
 
   if (isSearchEnabled) {
     return (
-      <div className="flex bg-white rounded-md font-leagueSparten justify-between gap-5 border-transparent xs:max-w-md w-12/12 p-4">
+      <div className="flex bg-white rounded-md font-leagueSparten justify-between gap-5 border-transparent xs:w-12/12 p-4 md:w-[inherit]">
         <div className="flex flex-wrap gap-5 justify-start m-1.5 max-w-md w-12/12">
           {keywords.map((data, index) => (
             <div key={index} className="flex border-red-50 rounded-2xl">

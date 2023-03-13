@@ -20,21 +20,19 @@ const JobListings = (props) => {
     }
 
     if (isSearchEnabled) {
-      setSmMarginTop("-mt-7");
+      setSmMarginTop("-mt-9");
     } else {
       setSmMarginTop("");
     }
   }, [keywords, isSearchEnabled]);
 
   return (
-    // <div className="flex justify-center">
     <div className={`flex px-8 mx-auto flex-col ${smMarginTop}`}>
       <SearchBar />
       {jobData.map((data) => (
         <JobListing data={data} key={data.id} setJobData={setJobData} />
       ))}
     </div>
-    // </div>
   );
 };
 
