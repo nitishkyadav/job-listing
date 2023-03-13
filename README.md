@@ -69,5 +69,5 @@ While implementing this Project, I learned how to setup and use
 ## Author
 
 - Website - [Nitish Kumar Yadav](https://www.nitishkyadav.me)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@nitishkyadav7115](https://www.frontendmentor.io/profile/nitishkyadav7115)
+- Twitter - [@nitish_yadav5](https://www.twitter.com/nitish_yadav5)
